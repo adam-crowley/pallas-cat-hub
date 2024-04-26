@@ -1,3 +1,102 @@
+/* ==========================================================================
+	 Base Styles
+	 ========================================================================== */ 
+
+  :root {
+    --yellow: #F9D36A;
+    --black: #000;
+    --font-bold: 700;
+    --font-extra-bold: 800;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+   *,
+   *::before,
+   *::after {
+	  box-sizing: border-box;
+   }
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .container {
+    position: relative;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  @media (min-width: 576px) {
+    .container {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+/* ==========================================================================
+	 Typography
+	 ========================================================================== */ 
+
+   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em; /* 16px */
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+/* ==========================================================================
+	 Header
+	 ========================================================================== */ 
+
 .header {
-  background-color: yellow;
+  display: flex;
+  align-items: center;
+  background-color: var(--yellow);
+  height: 3.75rem;
+}
+.header__logo {
+  align-self: flex-start;
+  margin: 0.75rem;
+  width: 4.875rem;
+  height: 4.875rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 3px rgba(0,0,0,0.25);
+}
+.header__title {
+  font-weight: var(--font-extra-bold);
+  font-size: 1.3125rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.header__nav {
+  margin: 0;
+  margin-left: auto;
+  margin-right: 2rem;
+  list-style-type: none;
+}
+.header__nav li {
+  margin-left: 2rem;
+  display: inline-block;
+}
+.header__nav a {
+  color: var(--black);
+  font-weight: var(--font-bold);
+  font-size: 1rem;
+  text-decoration: none;
 }

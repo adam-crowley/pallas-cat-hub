@@ -4,8 +4,9 @@ function Header() {
   return (
     <>
       <header className="header">
-        <h1>Pallas Cat Hub</h1>
-        <ul>
+        <img className="header__logo" src="/img/logo.png" alt="" />
+        <p className="header__title">Pallas' Cat Hub</p>
+        <ul className="header__nav">
           <li>
             <Link to="/">Facts</Link>
           </li>

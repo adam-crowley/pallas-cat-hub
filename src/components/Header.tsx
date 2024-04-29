@@ -4,8 +4,12 @@ function Header() {
   return (
     <>
       <header className="header">
-        <img className="header__logo" src="/img/logo.png" alt="" />
-        <p className="header__title">Pallas' Cat Hub</p>
+        <Link to="/" className="header__logo">
+          <img src="/img/logo.png" alt="" />
+        </Link>
+        <p className="header__title">
+          <Link to="/">Pallas' Cat Hub</Link>
+        </p>
         <ul className="header__nav">
           <li>
             <Link to="/facts">Facts</Link>

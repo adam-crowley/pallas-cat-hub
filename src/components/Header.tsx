@@ -8,16 +8,16 @@ function Header() {
         <p className="header__title">Pallas' Cat Hub</p>
         <ul className="header__nav">
           <li>
-            <Link to="/">Facts</Link>
+            <Link to="/facts">Facts</Link>
           </li>
           <li>
-            <Link to="/">Habitat</Link>
+            <Link to="/habitat">Habitat</Link>
           </li>
           <li>
-            <Link to="/">Videos</Link>
+            <Link to="/videos">Videos</Link>
           </li>
           <li>
-            <Link to="/">Gallery</Link>
+            <Link to="/gallery">Gallery</Link>
           </li>
         </ul>
       </header>

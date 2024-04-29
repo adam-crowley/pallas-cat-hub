@@ -5,6 +5,7 @@
   :root {
     --yellow: #F9D36A;
     --black: #000;
+    --white: #fff;
     --font-bold: 700;
     --font-extra-bold: 800;
   }
@@ -99,4 +100,21 @@
   font-weight: var(--font-bold);
   font-size: 1rem;
   text-decoration: none;
+}
+
+/* ==========================================================================
+	 Footer
+	 ========================================================================== */
+
+.footer {
+  background-color: var(--black);
+  padding: 1rem;
+}
+.footer p {
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+}
+.footer p a {
+  color: inherit;
 }

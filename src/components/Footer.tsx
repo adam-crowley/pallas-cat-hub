@@ -5,7 +5,10 @@ function Footer() {
     <>
       <footer className="footer">
         <p>
-          Copy courtesy of <Link to="/facts">Guardian</Link>
+          Copy courtesy of{' '}
+          <Link to="https://www.wired.com/2014/08/pallas-cat-facts/">
+            Wired magazine
+          </Link>
         </p>
       </footer>
     </>

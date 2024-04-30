@@ -4,6 +4,7 @@
 :root {
   --yellow: #F9D36A;
   --black: #000;
+  --light-black: #333;
   --white: #fff;
   --font-medium: 500;
   --font-bold: 700;
@@ -92,6 +93,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+}
+
+p {
   margin-top: 0;
 }
 
@@ -201,6 +207,27 @@ h2 {
 }
 
 /* ==========================================================================
+	 Habitat section
+	 ========================================================================== */
+.section--habitat {
+  padding: 4rem 0;
+  background-color: var(--light-black);
+}
+
+.section--habitat img {
+  max-width: 100%;
+}
+
+.section--habitat__text {
+  padding: 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  color: var(--white);
+}
+
+/* ==========================================================================
 	 Slider
 	 ========================================================================== */
 .slider {
@@ -220,7 +247,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-  padding: 1rem 4rem;
+  padding: 2rem 4rem;
 }
 
 .slider__desc {

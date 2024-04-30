@@ -6,6 +6,7 @@
     --yellow: #F9D36A;
     --black: #000;
     --white: #fff;
+    --font-medium: 500;
     --font-bold: 700;
     --font-extra-bold: 800;
   }
@@ -54,16 +55,22 @@
   .col-6 {
     width: 50%;
   }
-  button {
+  .button {
     cursor: pointer;
     font-size: 1rem;
     font-weight: var(--font-bold);
-    color: var(--black);
-    background-color: var(--yellow);
     border: 0;
     border-radius: 0.5rem;
     width: 11.25rem;
     height: 2.5rem;
+    &.button--prev {
+      background-color: var(--yellow);
+      color: var(--black);
+    }
+    &.button--next {
+      background-color: var(--black);
+      color: var(--yellow);
+    }
   }
 
 /* ==========================================================================
@@ -78,9 +85,12 @@
     font-optical-sizing: auto;
     font-style: normal;
   }
-
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
+  }
+  h2 {
+    font-size: 2.25rem;
+    font-weight: var(--font-medium);
   }
 
 /* ==========================================================================
@@ -103,6 +113,9 @@
 }
 .header__logo img {
   max-width: 100%;
+}
+.header__title {
+  margin-bottom: 0;
 }
 .header__title a {
   color: var(--black);
@@ -160,6 +173,25 @@
 }
 
 /* ==========================================================================
+	 Facts section
+	 ========================================================================== */
+
+.section--facts {
+  padding: 4rem 0;
+  background-image: url(img/snow.jpg);
+  background-position: center bottom;
+  background-size: cover;
+}
+.section--facts__intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section--facts h1, .section--facts p {
+  
+}
+
+
+/* ==========================================================================
 	 Slider
 	 ========================================================================== */
 
@@ -177,7 +209,16 @@
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-  padding: 0 4rem;
+  padding: 1rem 4rem;
+}
+.slider__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+.slider__desc p {
+  margin: 0;
 }
 .slider__nav {
   display: flex;

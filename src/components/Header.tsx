@@ -7,9 +7,9 @@ function Header() {
         <Link to="/" className="header__logo">
           <img src="/img/logo.png" alt="" />
         </Link>
-        <p className="header__title">
+        <h1 className="header__title">
           <Link to="/">Pallas' Cat Hub</Link>
-        </p>
+        </h1>
         <ul className="header__nav">
           <li>
             <Link to="/facts">Facts</Link>

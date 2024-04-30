@@ -39,12 +39,16 @@ function Slider() {
             </div>
             <div className="slider__content">
               <div className="slider__desc">
-                <h2 className="slider__title">{data[currentIndex].title}</h2>
+                <h3 className="slider__title">{data[currentIndex].title}</h3>
                 <p className="slider__text">{data[currentIndex].text}</p>
               </div>
               <div className="slider__nav">
-                <button onClick={prevSlide}>&#60; Previous</button>
-                <button onClick={nextSlide}>Next &#62;</button>
+                <button className="button button--prev" onClick={prevSlide}>
+                  &#60; Previous
+                </button>
+                <button className="button button--next" onClick={nextSlide}>
+                  Next &#62;
+                </button>
               </div>
             </div>
           </>

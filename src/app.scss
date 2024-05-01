@@ -213,6 +213,18 @@
 }
 
 /* ==========================================================================
+	 Videos section
+	 ========================================================================== */
+
+  .section--videos {
+    padding: 4rem 0;
+    background-color: var(--light-black);
+    background-image: url(img/snow.jpg);
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+/* ==========================================================================
 	 Slider
 	 ========================================================================== */
 
@@ -230,7 +242,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-  padding: 2rem 4rem;
+  padding: 0 4rem 2rem;
 }
 .slider__desc {
   display: flex;

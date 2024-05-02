@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface SlideData {
   imageUrl: string
-  youTubeUrl: string
+  youTubeId: string
   title: string
   author: string
   text: string
@@ -11,6 +11,8 @@ interface SlideData {
 function VideoSlider() {
   const [data, setData] = useState<SlideData[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [showVideo, setShowVideo] = useState(false)
+  const playerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetch('/data/video-slider-data.json')
@@ -23,12 +25,18 @@ function VideoSlider() {
     setCurrentIndex((prevIndex) =>
       prevIndex === data.length - 1 ? 0 : prevIndex + 1
     )
+    setShowVideo(false) // Reset video display when changing slides
   }
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
     )
+    setShowVideo(false) // Reset video display when changing slides
+  }
+
+  const handleImageClick = () => {
+    setShowVideo(true)
   }
 
   return (
@@ -36,8 +44,16 @@ function VideoSlider() {
       <div className="slider">
         {data.length > 0 && (
           <>
-            <div className="slider__img">
-              <img src={data[currentIndex].imageUrl} alt="" />
+            <div className="slider__media">
+              {showVideo ? (
+                <div className="slider__video">
+                  <div ref={playerRef} />
+                </div>
+              ) : (
+                <div className="slider__img" onClick={handleImageClick}>
+                  <img src={data[currentIndex].imageUrl} alt="" />
+                </div>
+              )}
             </div>
             <div className="slider__content">
               <div className="slider__desc">

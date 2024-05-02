@@ -1,9 +1,16 @@
 [
   {
     "imageUrl": "/img/1.jpg",
-    "youTubeUrl": "https://www.youtube.com/watch?v=kgrV3_g9rYY",
+    "youTubeId": "kgrV3_g9rYY",
     "author": "BBC",
     "title": "1. The Pallas' cat also goes by the name manul",
+    "text": "German naturalist Peter Pallas originally classified the cat as Felis manul in 1776. The word 'manul' has its roots in the Mongolian language. Its current scientific name, Otocolobus, comes from the Greek language and can be translated to 'ugly-eared.'"
+  },
+  {
+    "imageUrl": "/img/2.jpg",
+    "youTubeId": "kgrV3_g9rYY",
+    "author": "BBC",
+    "title": "2. The Pallas' cat also goes by the name manul",
     "text": "German naturalist Peter Pallas originally classified the cat as Felis manul in 1776. The word 'manul' has its roots in the Mongolian language. Its current scientific name, Otocolobus, comes from the Greek language and can be translated to 'ugly-eared.'"
   }
 ]

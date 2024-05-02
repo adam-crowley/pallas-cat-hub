@@ -12,7 +12,6 @@ function VideoSlider() {
   const [data, setData] = useState<SlideData[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showVideo, setShowVideo] = useState(false)
-  const playerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetch('/data/video-slider-data.json')
@@ -47,7 +46,15 @@ function VideoSlider() {
             <div className="slider__media">
               {showVideo ? (
                 <div className="slider__video">
-                  <div ref={playerRef} />
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${data[currentIndex].youTubeId}?autoplay=1`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                  <div />
                 </div>
               ) : (
                 <div className="slider__img" onClick={handleImageClick}>

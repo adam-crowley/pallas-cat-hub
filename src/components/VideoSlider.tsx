@@ -20,18 +20,34 @@ function VideoSlider() {
       .catch((error) => console.error('Error fetching data:', error))
   }, [])
 
+  useEffect(() => {
+    let player: YT.Player | null = null
+    if (showVideo) {
+      player = new YT.Player('slider__video', {
+        height: '360',
+        width: '640',
+        videoId: data[currentIndex].youTubeId,
+      })
+    }
+    return () => {
+      if (player) {
+        player.destroy()
+      }
+    }
+  }, [showVideo])
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === data.length - 1 ? 0 : prevIndex + 1
     )
-    setShowVideo(false) // Reset video display when changing slides
+    setShowVideo(false)
   }
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
     )
-    setShowVideo(false) // Reset video display when changing slides
+    setShowVideo(false)
   }
 
   const handleImageClick = () => {
@@ -45,17 +61,7 @@ function VideoSlider() {
           <>
             <div className="slider__media">
               {showVideo ? (
-                <div className="slider__video">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${data[currentIndex].youTubeId}?autoplay=1`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
-                  <div />
-                </div>
+                <div className="slider__video" id="slider__video"></div>
               ) : (
                 <div className="slider__img" onClick={handleImageClick}>
                   <img src={data[currentIndex].imageUrl} alt="" />

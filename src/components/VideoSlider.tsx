@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import { ThreeCircles } from 'react-loader-spinner'
 
 interface SlideData {
   imageUrl: string
@@ -27,6 +28,10 @@ function VideoSlider() {
         height: '360',
         width: '640',
         videoId: data[currentIndex].youTubeId,
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+        },
       })
     }
     return () => {
@@ -61,9 +66,26 @@ function VideoSlider() {
           <>
             <div className="slider__media">
               {showVideo ? (
-                <div className="slider__video" id="slider__video"></div>
+                <>
+                  <ThreeCircles
+                    visible={true}
+                    height="75"
+                    width="75"
+                    innerCircleColor="#F9D36A"
+                    middleCircleColor="#000"
+                    outerCircleColor="#000"
+                    ariaLabel="video-loading"
+                    wrapperClass="slider__video-loading"
+                  />
+                  <div className="slider__video" id="slider__video"></div>
+                </>
               ) : (
                 <div className="slider__img" onClick={handleImageClick}>
+                  <img
+                    className="slider__video-btn"
+                    src="img/play-btn.svg"
+                    alt=""
+                  />
                   <img src={data[currentIndex].imageUrl} alt="" />
                 </div>
               )}
@@ -71,6 +93,7 @@ function VideoSlider() {
             <div className="slider__content">
               <div className="slider__desc">
                 <h3 className="slider__title">{data[currentIndex].title}</h3>
+                <h3 className="slider__author">{data[currentIndex].author}</h3>
                 <p className="slider__text">{data[currentIndex].text}</p>
               </div>
               <div className="slider__nav">

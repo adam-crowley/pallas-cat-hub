@@ -232,7 +232,28 @@
   display: flex;
 }
 .slider__media {
+  position: relative;
   width: 50%;
+}
+.slider__media iframe {
+  position: relative;
+  max-width: 100%;
+}
+.slider__video-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider__video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider__img {
+  position: relative;
 }
 .slider__img img {
   max-width: 100%;

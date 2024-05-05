@@ -65,30 +65,32 @@ function VideoSlider() {
         {data.length > 0 && (
           <>
             <div className="slider__media">
-              {showVideo ? (
-                <>
-                  <ThreeCircles
-                    visible={true}
-                    height="75"
-                    width="75"
-                    innerCircleColor="#F9D36A"
-                    middleCircleColor="#000"
-                    outerCircleColor="#000"
-                    ariaLabel="video-loading"
-                    wrapperClass="slider__video-loading"
-                  />
-                  <div className="slider__video" id="slider__video"></div>
-                </>
-              ) : (
-                <div className="slider__img" onClick={handleImageClick}>
-                  <img
-                    className="slider__video-btn"
-                    src="img/play-btn.svg"
-                    alt=""
-                  />
-                  <img src={data[currentIndex].imageUrl} alt="" />
-                </div>
-              )}
+              <ThreeCircles
+                visible={true}
+                height="75"
+                width="75"
+                innerCircleColor="#F9D36A"
+                middleCircleColor="#000"
+                outerCircleColor="#000"
+                ariaLabel="video-loading"
+                wrapperClass="slider__video-loading"
+              />
+              <div>
+                {showVideo ? (
+                  <>
+                    <div className="slider__video" id="slider__video"></div>
+                  </>
+                ) : (
+                  <div className="slider__img" onClick={handleImageClick}>
+                    <img
+                      className="slider__video-btn"
+                      src="img/play-btn.svg"
+                      alt=""
+                    />
+                    <img src={data[currentIndex].imageUrl} alt="" />
+                  </div>
+                )}
+              </div>
             </div>
             <div className="slider__content">
               <div className="slider__desc">

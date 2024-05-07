@@ -190,7 +190,7 @@ p.large {
   background-color: var(--black);
   color: var(--white);
   padding: 10rem 0;
-  background-image: url(img/pallas-hero.jpg);
+  background-image: url(img/compressed/pallas-hero.jpg);
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
@@ -200,7 +200,7 @@ p.large {
 	 ========================================================================== */
 .section--facts {
   padding: 4rem 0;
-  background-image: url(img/snow.jpg);
+  background-image: url(img/compressed/snow.jpg);
   background-position: center bottom;
   background-size: cover;
 }
@@ -237,7 +237,7 @@ p.large {
 .section--videos {
   padding: 4rem 0;
   background-color: var(--light-black);
-  background-image: url(img/snow.jpg);
+  background-image: url(img/compressed/snow.jpg);
   background-position: center bottom;
   background-size: cover;
 }

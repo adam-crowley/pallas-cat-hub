@@ -1,37 +1,32 @@
-import { writeFileSync, readdirSync, statSync } from 'fs'
-import { join, extname, resolve } from 'path'
+import fs from 'fs'
+import path from 'path'
 import sharp from 'sharp'
 
-const imgFolderPath = resolve(__dirname, '../../public/img')
+const imgPath = path.resolve('public/img')
+const compressedImgPath = path.resolve('public/img/compressed')
 
-// Function to optimize an image
-async function optimizeImage(imagePath) {
-  const imageBuffer = await sharp(imagePath)
-    .jpeg({ quality: 50 }) // Adjust quality as per your requirement
-    .toBuffer()
+const optimizeImages = async () => {
+  try {
+    const files = await fs.promises.readdir(imgPath)
 
-  // Write the optimized image back to the file
-  writeFileSync(imagePath, imageBuffer)
-}
-
-// Function to recursively traverse through the folder and optimize images
-async function optimizeImagesInFolder(folderPath) {
-  const files = readdirSync(folderPath)
-  for (const file of files) {
-    const filePath = join(folderPath, file)
-    if (statSync(filePath).isDirectory()) {
-      await optimizeImagesInFolder(filePath) // Recursive call for subfolders
-    } else {
-      const ext = extname(filePath).toLowerCase()
-      if (['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg'].includes(ext)) {
-        await optimizeImage(filePath)
-        console.log(`Optimized: ${filePath}`)
+    for (const file of files) {
+      if (file.match(/\.(jpg|jpeg)$/i)) {
+        const imagePath = path.join(imgPath, file)
+        await sharp(imagePath)
+          .jpeg({ quality: 80 })
+          .toFile(path.join(compressedImgPath, `${file}`))
+      }
+      if (file.match(/\.(png)$/i)) {
+        const imagePath = path.join(imgPath, file)
+        await sharp(imagePath)
+          .png()
+          .toFile(path.join(compressedImgPath, `${file}`))
       }
     }
+    console.log('Images optimized successfully')
+  } catch (error) {
+    console.error('Error optimizing images:', error)
   }
 }
 
-// Start optimizing images in the folder
-optimizeImagesInFolder(imgFolderPath)
-  .then(() => console.log('All images optimized successfully!'))
-  .catch((error) => console.error('Error optimizing images:', error))
+optimizeImages()

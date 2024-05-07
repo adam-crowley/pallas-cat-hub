@@ -5,7 +5,6 @@ import Intro from './Intro'
 import Habitat from './Habitat'
 import Videos from './Videos'
 import Facts from './Facts'
-import Gallery from './gallery'
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Facts />
         <Habitat />
         <Videos />
-        <Gallery />
       </main>
       <Footer />
     </>

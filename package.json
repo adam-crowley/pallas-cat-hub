@@ -11,12 +11,20 @@
   },
   "dependencies": {
     "@types/youtube": "^0.0.50",
+    "compressorjs": "^1.2.1",
+    "imagemin": "^9.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
-    "react-router-dom": "^6.23.0"
+    "react-router-dom": "^6.23.0",
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
+    "@types/imagemin": "^8.0.5",
+    "@types/imagemin-jpegtran": "^5.0.4",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

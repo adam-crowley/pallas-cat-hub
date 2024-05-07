@@ -95,7 +95,7 @@ function VideoSlider() {
             <div className="slider__content">
               <div className="slider__desc">
                 <h3 className="slider__title">{data[currentIndex].title}</h3>
-                <h3 className="slider__author">{data[currentIndex].author}</h3>
+                <p className="slider__author">{data[currentIndex].author}</p>
                 <p className="slider__text">{data[currentIndex].text}</p>
               </div>
               <div className="slider__nav">

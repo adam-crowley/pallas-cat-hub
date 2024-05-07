@@ -20,9 +20,6 @@ function Header() {
           <li>
             <Link to="/videos">Videos</Link>
           </li>
-          <li>
-            <Link to="/gallery">Gallery</Link>
-          </li>
         </ul>
       </header>
     </>

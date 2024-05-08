@@ -1,6 +1,6 @@
+import '../app.css'
 import Header from './Header'
 import Footer from './Footer'
-import '../app.css'
 import Intro from './Intro'
 import Habitat from './Habitat'
 import Videos from './Videos'

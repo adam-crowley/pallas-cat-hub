@@ -17,7 +17,7 @@ function Habitat() {
             </p>
           </div>
           <div className="col-6">
-            <img src="img/manul-distribution.png" alt="" />
+            <img src="img/compressed/manul-distribution.png" alt="" />
           </div>
         </div>
       </div>

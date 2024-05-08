@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
 
-const imgPath = path.resolve('public/img')
+const imgPath = path.resolve('public/img/uncompressed')
 const compressedImgPath = path.resolve('public/img/compressed')
 
 const optimizeImages = async () => {

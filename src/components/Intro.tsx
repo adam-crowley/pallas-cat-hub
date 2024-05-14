@@ -3,8 +3,14 @@ function Intro() {
     <>
       <div className="section--intro">
         <div className="container">
-          <div className="col-6"></div>
-          <div className="col-6">
+          <div className="col-12 col-md-6">
+            <img
+              src="img/compressed/pallas-hero.jpg"
+              alt=""
+              className="full-width"
+            />
+          </div>
+          <div className="col-12 col-md-6">
             <h2>What is a Pallas’ cat?</h2>
             <p>
               The Pallas' cat (Otocolobus manul) is a small wildcat known for

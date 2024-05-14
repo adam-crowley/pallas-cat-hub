@@ -9,8 +9,7 @@ function Facts() {
             <div className="section--facts__intro">
               <h2>Facts</h2>
               <p className="large">
-                Everything you always wanted to know about Pallas’ Cats but were
-                afraid to ask!
+                Everything you always wanted to know about Pallas’ Cats!
               </p>
             </div>
             <Slider />

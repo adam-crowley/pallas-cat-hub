@@ -1,7 +1,17 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Header() {
+interface HeaderProps {
+  scrollToSection: (sectionRef: React.RefObject<HTMLElement>) => void
+  refs: {
+    introRef: React.RefObject<HTMLElement>
+    factsRef: React.RefObject<HTMLElement>
+    habitatRef: React.RefObject<HTMLElement>
+    videosRef: React.RefObject<HTMLElement>
+  }
+}
+
+function Header({ scrollToSection, refs }: HeaderProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(true)
 
   function handleClick() {
@@ -24,7 +34,11 @@ function Header() {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header__logo">
+        <Link
+          to="/"
+          onClick={() => scrollToSection(refs.introRef)}
+          className="header__logo"
+        >
           <img src="/img/logo.png" alt="" />
         </Link>
         <h1 className="header__title">
@@ -36,13 +50,22 @@ function Header() {
           }`}
         >
           <li>
-            <Link to="/facts">Facts</Link>
+            <Link to="/facts" onClick={() => scrollToSection(refs.factsRef)}>
+              Facts
+            </Link>
           </li>
           <li>
-            <Link to="/habitat">Habitat</Link>
+            <Link
+              to="/habitat"
+              onClick={() => scrollToSection(refs.habitatRef)}
+            >
+              Habitat
+            </Link>
           </li>
           <li>
-            <Link to="/videos">Videos</Link>
+            <Link to="/videos" onClick={() => scrollToSection(refs.videosRef)}>
+              Videos
+            </Link>
           </li>
         </ul>
         <button className="header__nav-btn" onClick={handleClick}>

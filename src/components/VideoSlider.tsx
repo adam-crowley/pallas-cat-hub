@@ -81,13 +81,20 @@ function VideoSlider() {
                     <div className="slider__video" id="slider__video"></div>
                   </>
                 ) : (
-                  <div className="slider__video-img" onClick={playVideo}>
+                  <div
+                    className="slider__video-img-container"
+                    onClick={playVideo}
+                  >
                     <img
                       className="slider__video-btn"
                       src="img/play-btn.svg"
                       alt=""
                     />
-                    <img src={data[currentIndex].imageUrl} alt="" />
+                    <img
+                      className="slider__video-img"
+                      src={data[currentIndex].imageUrl}
+                      alt=""
+                    />
                   </div>
                 )}
               </div>

@@ -384,7 +384,12 @@
 }
 .slider__media {
   position: relative;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 2rem;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-bottom: 0;
+  }
 }
 .slider__media iframe {
   position: relative;
@@ -425,8 +430,11 @@
     margin: 0 auto;
   }
 }
-.slider__video-img {
+.slider__video-img-container {
   position: relative;
+  width: 100%;
+}
+.slider__video-img {
   width: 100%;
 }
 .slider__content {

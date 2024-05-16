@@ -10,7 +10,7 @@ function Intro() {
               className="full-width"
             />
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 section--intro__content">
             <h2>What is a Pallas’ cat?</h2>
             <p>
               The Pallas' cat (Otocolobus manul) is a small wildcat known for

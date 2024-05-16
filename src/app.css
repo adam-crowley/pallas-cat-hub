@@ -291,13 +291,24 @@ p.large {
 	 Footer
 	 ========================================================================== */
 .footer {
+  display: flex;
+  justify-content: center;
   background-color: var(--black);
   padding: 1rem;
 }
 
+.footer__logo {
+  align-self: center;
+  width: 2rem;
+  margin-right: 0.7rem;
+}
+
 .footer p {
+  align-self: center;
   color: var(--white);
+  font-weight: var(--font-extra-bold);
   text-align: center;
+  text-transform: uppercase;
   margin: 0;
 }
 

@@ -55,7 +55,7 @@ function VideoSlider() {
     setShowVideo(false)
   }
 
-  const handleImageClick = () => {
+  const playVideo = () => {
     setShowVideo(true)
   }
 
@@ -81,7 +81,7 @@ function VideoSlider() {
                     <div className="slider__video" id="slider__video"></div>
                   </>
                 ) : (
-                  <div className="slider__video-img" onClick={handleImageClick}>
+                  <div className="slider__video-img" onClick={playVideo}>
                     <img
                       className="slider__video-btn"
                       src="img/play-btn.svg"

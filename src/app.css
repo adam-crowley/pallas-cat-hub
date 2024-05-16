@@ -372,11 +372,12 @@ p.large {
 
 .section--facts__intro {
   text-align: left;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
   .section--facts__intro {
     text-align: center;
+    margin-bottom: 3rem;
   }
 }
 
@@ -384,8 +385,19 @@ p.large {
 	 Habitat section
 	 ========================================================================== */
 .section--habitat {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background-color: var(--light-black);
+}
+@media (min-width: 768px) {
+  .section--habitat {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .section--habitat .container {
+    flex-direction: row;
+  }
 }
 
 .section--habitat img {
@@ -393,23 +405,33 @@ p.large {
 }
 
 .section--habitat__text {
-  padding: 1rem 4rem;
+  padding: 0 0 2rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   color: var(--white);
 }
+@media (min-width: 768px) {
+  .section--habitat__text {
+    padding: 0 4rem;
+  }
+}
 
 /* ==========================================================================
 	 Videos section
 	 ========================================================================== */
 .section--videos {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background-color: var(--light-black);
   background-image: url(img/compressed/snow.jpg);
   background-position: center bottom;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  .section--videos {
+    padding: 4rem 0;
+  }
 }
 
 /* ==========================================================================

@@ -3,7 +3,7 @@ function Habitat() {
     <>
       <div className="section--habitat">
         <div className="container">
-          <div className="col-6 section--habitat__text">
+          <div className="col-12 col-md-6 section--habitat__text">
             <h2>Habitat</h2>
             <p>
               The Pallas's cat's range extends from the Caucasus eastward to
@@ -16,7 +16,7 @@ function Habitat() {
               warm summers.
             </p>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <img src="img/compressed/manul-distribution.png" alt="" />
           </div>
         </div>

@@ -9,15 +9,30 @@ import Intro from './components/Intro'
 import Facts from './components/Facts'
 import Habitat from './components/Habitat'
 import Videos from './components/Videos'
+import Database from './components/Database'
+import Content from './components/Content'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />}>
-        <Route path="/" element={<Intro />} />
-        <Route path="facts" element={<Facts />} />
-        <Route path="habitat" element={<Habitat />} />
-        <Route path="videos" element={<Videos />} />
+        <Route
+          path="/"
+          element={
+            <Content
+              introRef={undefined}
+              factsRef={undefined}
+              habitatRef={undefined}
+              videosRef={undefined}
+            />
+          }
+        >
+          <Route path="/" element={<Intro />} />
+          <Route path="facts" element={<Facts />} />
+          <Route path="habitat" element={<Habitat />} />
+          <Route path="videos" element={<Videos />} />
+        </Route>
+        <Route path="database" element={<Database />} />
       </Route>
     </>
   )

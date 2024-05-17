@@ -1,12 +1,9 @@
 import React, { useRef } from 'react'
+import { Outlet } from 'react-router-dom'
 
 import '../app.css'
 import Header from './Header'
 import Footer from './Footer'
-import Intro from './Intro'
-import Habitat from './Habitat'
-import Videos from './Videos'
-import Facts from './Facts'
 
 function App() {
   const introRef = useRef(null)
@@ -25,18 +22,7 @@ function App() {
         refs={{ introRef, factsRef, habitatRef, videosRef }}
       />
       <main>
-        <section ref={introRef}>
-          <Intro />
-        </section>
-        <section ref={factsRef}>
-          <Facts />
-        </section>
-        <section ref={habitatRef}>
-          <Habitat />
-        </section>
-        <section ref={videosRef}>
-          <Videos />
-        </section>
+        <Outlet context={{ introRef, factsRef, habitatRef, videosRef }} />
       </main>
       <Footer />
     </>

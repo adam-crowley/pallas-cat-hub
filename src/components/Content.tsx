@@ -5,17 +5,11 @@ import Habitat from './Habitat'
 import Videos from './Videos'
 import Facts from './Facts'
 
-// interface ContentProps {
-//   refs: {
-//     introRef: React.RefObject<HTMLElement>
-//     factsRef: React.RefObject<HTMLElement>
-//     habitatRef: React.RefObject<HTMLElement>
-//     videosRef: React.RefObject<HTMLElement>
-//   }
-// }
+import { RefsType } from '../../models/models'
 
-function Content({ introRef, factsRef, habitatRef, videosRef }) {
-  // const { introRef, factsRef, habitatRef, videosRef }: ContentProps = useOutletContext()
+function Content() {
+  const { introRef, factsRef, habitatRef, videosRef } =
+    useOutletContext<RefsType>()
 
   return (
     <>

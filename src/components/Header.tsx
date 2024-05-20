@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
-interface HeaderProps {
-  scrollToSection: (sectionRef: React.RefObject<HTMLElement>) => void
-  refs: {
-    introRef: React.RefObject<HTMLElement>
-    factsRef: React.RefObject<HTMLElement>
-    habitatRef: React.RefObject<HTMLElement>
-    videosRef: React.RefObject<HTMLElement>
-  }
-}
+import { HeaderProps } from '../../models/models'
 
 function Header({ scrollToSection, refs }: HeaderProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(true)

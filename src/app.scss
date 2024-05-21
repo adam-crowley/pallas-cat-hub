@@ -506,9 +506,39 @@
     padding: 4rem 0;
   }
 }
-.section--database h2 {
-  color: var(--white);
+.section--database__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 4rem;
+  color: var(--white);
+}
+.section--database__header h2 {
+  margin-bottom: 0;
+}
+.section--database__filter {
+  display: flex;
+}
+.section--database__filter-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.section--database__filter-list li {
+  list-style-type: none;
+  margin-left: 0.5rem;
+}
+.section--database__filter-list button {
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  color: var(--white);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0,0,0,0.5);
 }
 .section--database__manuls {
   display: grid;

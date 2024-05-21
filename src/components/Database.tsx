@@ -4,8 +4,73 @@ function Database() {
       <section>
         <div className="section--database">
           <div className="container">
-            <div className="col-12">
+            <div className="section--database__header col-12">
               <h2>Pallas Cat Database</h2>
+              <div className="section--database__filter">
+                Filter by country
+                <ul className="section--database__filter-list">
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/jp.svg"
+                        alt=""
+                      />
+                      Japan
+                    </button>
+                  </li>
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/cn.svg"
+                        alt=""
+                      />
+                      China
+                    </button>
+                  </li>
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/de.svg"
+                        alt=""
+                      />
+                      Germany
+                    </button>
+                  </li>
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/ru.svg"
+                        alt=""
+                      />
+                      Russia
+                    </button>
+                  </li>
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/pl.svg"
+                        alt=""
+                      />
+                      Poland
+                    </button>
+                  </li>
+                  <li>
+                    <button>
+                      <img
+                        className="section--database__flag"
+                        src="img/us.svg"
+                        alt=""
+                      />
+                      US
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="container container--full-width">

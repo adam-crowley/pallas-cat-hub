@@ -17,14 +17,16 @@ function App() {
 
   return (
     <>
-      <Header
-        scrollToSection={scrollToSection}
-        refs={{ introRef, factsRef, habitatRef, videosRef }}
-      />
-      <main>
-        <Outlet context={{ introRef, factsRef, habitatRef, videosRef }} />
-      </main>
-      <Footer />
+      <div className="page">
+        <Header
+          scrollToSection={scrollToSection}
+          refs={{ introRef, factsRef, habitatRef, videosRef }}
+        />
+        <main>
+          <Outlet context={{ introRef, factsRef, habitatRef, videosRef }} />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

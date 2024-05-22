@@ -1,4 +1,17 @@
+import { useState, useEffect } from 'react'
+
 function Database() {
+  const [catData, setCatData] = useState([])
+
+  useEffect(() => {
+    fetch('/data/cat-data.json').then((response) =>
+      response
+        .json()
+        .then((catData) => setCatData(catData))
+        .catch((error) => console.error('Error fetching data:', error))
+    )
+  }, [])
+
   return (
     <>
       <section>
@@ -7,7 +20,7 @@ function Database() {
             <div className="section--database__header col-12">
               <h2>Pallas Cat Database</h2>
               <div className="section--database__filter">
-                Filter by country
+                <span>Filter by country</span>
                 <ul className="section--database__filter-list">
                   <li>
                     <button>
@@ -76,126 +89,28 @@ function Database() {
           <div className="container container--full-width">
             <div className="col-12">
               <div className="section--database__manuls">
-                <div className="section--database__manul">
-                  <h3>Polly</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/polly.webp"
-                      alt=""
-                    />
-                    <div className="section--database__country">
+                {catData.map((cat) => (
+                  <div className="section--database__manul">
+                    <h3>{cat.name}</h3>
+                    <div className="section--database__img-wrap">
                       <img
-                        className="section--database__flag"
-                        src="img/jp.svg"
-                        alt=""
+                        className="section--database__img"
+                        src={cat.imageUrl}
+                        alt={cat.name}
                       />
-                      <span className="section--database__flag-title">
-                        Japan
-                      </span>
+                      <div className="section--database__country">
+                        <img
+                          className="section--database__flag"
+                          src={cat.countryUrl}
+                          alt={cat.country}
+                        />
+                        <span className="section--database__flag-title">
+                          {cat.country}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="section--database__manul">
-                  <h3>Az</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/az.webp"
-                      alt=""
-                    />
-                    <div className="section--database__country">
-                      <img
-                        className="section--database__flag"
-                        src="img/jp.svg"
-                        alt=""
-                      />
-                      <span className="section--database__flag-title">
-                        Japan
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="section--database__manul">
-                  <h3>Bol</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/bol.png"
-                      alt=""
-                    />
-                    <div className="section--database__country">
-                      <img
-                        className="section--database__flag"
-                        src="img/jp.svg"
-                        alt=""
-                      />
-                      <span className="section--database__flag-title">
-                        Japan
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="section--database__manul">
-                  <h3>Dunzi</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/dunzi.webp"
-                      alt=""
-                    />
-                    <div className="section--database__country">
-                      <img
-                        className="section--database__flag"
-                        src="img/cn.svg"
-                        alt=""
-                      />
-                      <span className="section--database__flag-title">
-                        China
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="section--database__manul">
-                  <h3>Norbu Jr</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/norbu-jr.webp"
-                      alt=""
-                    />
-                    <div className="section--database__country">
-                      <img
-                        className="section--database__flag"
-                        src="img/de.svg"
-                        alt=""
-                      />
-                      <span className="section--database__flag-title">
-                        Germany
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="section--database__manul">
-                  <h3>Zelenogorsk</h3>
-                  <div className="section--database__img-wrap">
-                    <img
-                      className="section--database__img"
-                      src="img/uncompressed/database/gorsk.webp"
-                      alt=""
-                    />
-                    <div className="section--database__country">
-                      <img
-                        className="section--database__flag"
-                        src="img/ru.svg"
-                        alt=""
-                      />
-                      <span className="section--database__flag-title">
-                        Russia
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

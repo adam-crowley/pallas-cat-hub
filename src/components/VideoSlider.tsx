@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react'
 import { ThreeCircles } from 'react-loader-spinner'
 
-interface SlideData {
-  imageUrl: string
-  youTubeId: string
-  title: string
-  author: string
-  text: string
-}
+import { VideoSlideData } from '../../models/models'
 
 function VideoSlider() {
-  const [data, setData] = useState<SlideData[]>([])
+  const [data, setData] = useState<VideoSlideData[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showVideo, setShowVideo] = useState(false)
 

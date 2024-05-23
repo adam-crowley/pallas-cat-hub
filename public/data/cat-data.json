@@ -1,50 +1,80 @@
 [
   {
-    "name": "Polly",
     "country": "Japan",
-    "countryUrl": "/img/jp.svg",
-    "imageUrl": "/img/uncompressed/database/polly.webp"
+    "cats": [
+      {
+        "name": "Polly",
+        "imageUrl": "/img/uncompressed/database/polly.webp",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Az",
+        "imageUrl": "/img/uncompressed/database/az.webp",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Bol",
+        "imageUrl": "/img/uncompressed/database/bol.png",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      }
+    ]
   },
   {
-    "name": "Az",
-    "country": "Japan",
-    "countryUrl": "/img/jp.svg",
-    "imageUrl": "/img/uncompressed/database/az.webp"
-  },
-  {
-    "name": "Bol",
-    "country": "Japan",
-    "countryUrl": "/img/jp.svg",
-    "imageUrl": "/img/uncompressed/database/bol.png"
-  },
-  {
-    "name": "Dunzi",
     "country": "China",
-    "countryUrl": "/img/cn.svg",
-    "imageUrl": "/img/uncompressed/database/dunzi.webp"
+    "cats": [
+      {
+        "name": "Dunzi",
+        "imageUrl": "/img/uncompressed/database/dunzi.webp",
+        "country": "China",
+        "countryUrl": "/img/cn.svg"
+      }
+    ]
   },
   {
-    "name": "Norbu Jr",
     "country": "Germany",
-    "countryUrl": "/img/de.svg",
-    "imageUrl": "/img/uncompressed/database/norbu-jr.webp"
+    "cats": [
+      {
+        "name": "Norbu Jr",
+        "imageUrl": "/img/uncompressed/database/norbu-jr.webp",
+        "country": "Germany",
+        "countryUrl": "/img/de.svg"
+      }
+    ]
   },
   {
-    "name": "Zelenogorsk",
     "country": "Russia",
-    "countryUrl": "/img/ru.svg",
-    "imageUrl": "/img/uncompressed/database/gorsk.webp"
+    "cats": [
+      {
+        "name": "Zelenogorsk",
+        "imageUrl": "/img/uncompressed/database/gorsk.webp",
+        "country": "Russia",
+        "countryUrl": "/img/ru.svg"
+      }
+    ]
   },
   {
-    "name": "Magellan",
     "country": "Poland",
-    "countryUrl": "/img/pl.svg",
-    "imageUrl": "/img/uncompressed/database/magellan.webp"
+    "cats": [
+      {
+        "name": "Magellan",
+        "imageUrl": "/img/uncompressed/database/magellan.webp",
+        "country": "Poland",
+        "countryUrl": "/img/pl.svg"
+      }
+    ]
   },
   {
-    "name": "Pazi",
     "country": "US",
-    "countryUrl": "/img/us.svg",
-    "imageUrl": "/img/uncompressed/database/pazi.webp"
+    "cats": [
+      {
+        "name": "Pazi",
+        "imageUrl": "/img/uncompressed/database/pazi.webp",
+        "country": "US",
+        "countryUrl": "/img/us.svg"
+      }
+    ]
   }
 ]

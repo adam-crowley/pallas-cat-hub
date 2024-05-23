@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 
+import { CountryData, CatData } from '../../models/models'
+
 function Database() {
-  const [catData, setCatData] = useState([])
+  const [countryData, setCountryData] = useState([])
 
   useEffect(() => {
     fetch('/data/cat-data.json').then((response) =>
       response
         .json()
-        .then((catData) => setCatData(catData))
+        .then((countryData) => setCountryData(countryData))
         .catch((error) => console.error('Error fetching data:', error))
     )
   }, [])
@@ -89,28 +91,38 @@ function Database() {
           <div className="container container--full-width">
             <div className="col-12">
               <div className="section--database__manuls">
-                {catData.map((cat) => (
-                  <div className="section--database__manul">
-                    <h3>{cat.name}</h3>
-                    <div className="section--database__img-wrap">
-                      <img
-                        className="section--database__img"
-                        src={cat.imageUrl}
-                        alt={cat.name}
-                      />
-                      <div className="section--database__country">
-                        <img
-                          className="section--database__flag"
-                          src={cat.countryUrl}
-                          alt={cat.country}
-                        />
-                        <span className="section--database__flag-title">
-                          {cat.country}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {countryData.length > 0 && (
+                  <>
+                    {countryData.map((country: CountryData) => (
+                      <>
+                        {country.cats.map((cat: CatData) => (
+                          <>
+                            <div className="section--database__manul">
+                              <h3>{cat.name}</h3>
+                              <div className="section--database__img-wrap">
+                                <img
+                                  className="section--database__img"
+                                  src={cat.imageUrl}
+                                  alt={cat.name}
+                                />
+                                <div className="section--database__country">
+                                  <img
+                                    className="section--database__flag"
+                                    src={cat.countryUrl}
+                                    alt={cat.country}
+                                  />
+                                  <span className="section--database__flag-title">
+                                    {cat.country}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        ))}
+                      </>
+                    ))}
+                  </>
+                )}
               </div>
             </div>
           </div>

@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
 
-interface SlideData {
-  imageUrl: string
-  title: string
-  text: string
-}
+import { SlideData } from '../../models/models'
 
 function Slider() {
   const [data, setData] = useState<SlideData[]>([])

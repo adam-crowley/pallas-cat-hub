@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import { HeaderProps } from '../../models/models'
 
 function Header({ scrollToSection, refs }: HeaderProps) {

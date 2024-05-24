@@ -1,21 +1,26 @@
 [
   {
     "country": "Japan",
+    "countryUrl": "/img/jp.svg",
+    "countryId": 1,
     "cats": [
       {
         "name": "Polly",
+        "id": 1,
         "imageUrl": "/img/uncompressed/database/polly.webp",
         "country": "Japan",
         "countryUrl": "/img/jp.svg"
       },
       {
         "name": "Az",
+        "id": 2,
         "imageUrl": "/img/uncompressed/database/az.webp",
         "country": "Japan",
         "countryUrl": "/img/jp.svg"
       },
       {
         "name": "Bol",
+        "id": 3,
         "imageUrl": "/img/uncompressed/database/bol.png",
         "country": "Japan",
         "countryUrl": "/img/jp.svg"
@@ -24,9 +29,12 @@
   },
   {
     "country": "China",
+    "countryUrl": "/img/cn.svg",
+    "countryId": 2,
     "cats": [
       {
         "name": "Dunzi",
+        "id": 4,
         "imageUrl": "/img/uncompressed/database/dunzi.webp",
         "country": "China",
         "countryUrl": "/img/cn.svg"
@@ -35,9 +43,12 @@
   },
   {
     "country": "Germany",
+    "countryUrl": "/img/de.svg",
+    "countryId": 3,
     "cats": [
       {
         "name": "Norbu Jr",
+        "id": 5,
         "imageUrl": "/img/uncompressed/database/norbu-jr.webp",
         "country": "Germany",
         "countryUrl": "/img/de.svg"
@@ -46,9 +57,12 @@
   },
   {
     "country": "Russia",
+    "countryUrl": "/img/ru.svg",
+    "countryId": 4,
     "cats": [
       {
         "name": "Zelenogorsk",
+        "id": 6,
         "imageUrl": "/img/uncompressed/database/gorsk.webp",
         "country": "Russia",
         "countryUrl": "/img/ru.svg"
@@ -57,9 +71,12 @@
   },
   {
     "country": "Poland",
+    "countryUrl": "/img/pl.svg",
+    "countryId": 5,
     "cats": [
       {
         "name": "Magellan",
+        "id": 7,
         "imageUrl": "/img/uncompressed/database/magellan.webp",
         "country": "Poland",
         "countryUrl": "/img/pl.svg"
@@ -68,9 +85,12 @@
   },
   {
     "country": "US",
+    "countryUrl": "/img/us.svg",
+    "countryId": 6,
     "cats": [
       {
         "name": "Pazi",
+        "id": 8,
         "imageUrl": "/img/uncompressed/database/pazi.webp",
         "country": "US",
         "countryUrl": "/img/us.svg"

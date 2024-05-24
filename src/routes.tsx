@@ -22,7 +22,7 @@ const router = createBrowserRouter(
           <Route path="habitat" element={<Habitat />} />
           <Route path="videos" element={<Videos />} />
         </Route>
-        <Route path="database" element={<Database />} />
+        <Route path="database/:country" element={<Database />}></Route>
       </Route>
     </>
   )

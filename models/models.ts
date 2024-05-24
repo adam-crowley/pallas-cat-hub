@@ -26,10 +26,13 @@ export interface VideoSlideData {
 
 export interface CountryData {
   country: string
+  countryUrl: string
+  countryId: number
   cats: []
 }
 export interface CatData {
   name: string
+  id: number
   country: string
   countryUrl: string
   imageUrl: string

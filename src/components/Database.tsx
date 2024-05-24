@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 import { CountryData, CatData } from '../../models/models'
 
 function Database() {
   const [countryData, setCountryData] = useState([])
+  const { country } = useParams<string>()
 
   useEffect(() => {
     fetch('/data/cat-data.json').then((response) =>
@@ -13,6 +15,10 @@ function Database() {
         .catch((error) => console.error('Error fetching data:', error))
     )
   }, [])
+
+  const filteredCountryData = countryData.filter(
+    (c) => c.country.toLowerCase() === country.toLowerCase()
+  )
 
   return (
     <>
@@ -24,66 +30,22 @@ function Database() {
               <div className="section--database__filter">
                 <span>Filter by country</span>
                 <ul className="section--database__filter-list">
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/jp.svg"
-                        alt=""
-                      />
-                      Japan
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/cn.svg"
-                        alt=""
-                      />
-                      China
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/de.svg"
-                        alt=""
-                      />
-                      Germany
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/ru.svg"
-                        alt=""
-                      />
-                      Russia
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/pl.svg"
-                        alt=""
-                      />
-                      Poland
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <img
-                        className="section--database__flag"
-                        src="img/us.svg"
-                        alt=""
-                      />
-                      US
-                    </button>
-                  </li>
+                  {countryData.map((country: CountryData) => (
+                    <>
+                      <li key={country.countryId}>
+                        <Link to={`/database/${country.country}`}>
+                          <button>
+                            <img
+                              className="section--database__flag"
+                              src={country.countryUrl}
+                              alt={country.country}
+                            />
+                            {country.country}
+                          </button>
+                        </Link>
+                      </li>
+                    </>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -91,13 +53,16 @@ function Database() {
           <div className="container container--full-width">
             <div className="col-12">
               <div className="section--database__manuls">
-                {countryData.length > 0 && (
+                {filteredCountryData.length > 0 ? (
                   <>
-                    {countryData.map((country: CountryData) => (
+                    {filteredCountryData.map((country: CountryData) => (
                       <>
                         {country.cats.map((cat: CatData) => (
                           <>
-                            <div className="section--database__manul">
+                            <div
+                              key={cat.id}
+                              className="section--database__manul"
+                            >
                               <h3>{cat.name}</h3>
                               <div className="section--database__img-wrap">
                                 <img
@@ -122,6 +87,10 @@ function Database() {
                       </>
                     ))}
                   </>
+                ) : (
+                  <p className="section--database__message">
+                    No cats found for this country
+                  </p>
                 )}
               </div>
             </div>

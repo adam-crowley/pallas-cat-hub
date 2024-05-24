@@ -625,6 +625,10 @@ p.large {
   margin-left: 0.5rem;
 }
 
+.section--database__filter-list a {
+  text-decoration: none;
+}
+
 .section--database__filter-list button {
   font-family: "Montserrat", sans-serif;
   background-color: transparent;
@@ -684,6 +688,10 @@ p.large {
 
 .section--database__flag-title {
   font-size: 0.875rem;
+}
+
+.section--database__message {
+  color: var(--white);
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -3,9 +3,12 @@ import { Link, useParams } from 'react-router-dom'
 
 import { CountryData, CatData } from '../../models/models'
 
+import ManulCard from './Cat'
+
 function Database() {
   const [countryData, setCountryData] = useState([])
-  const { country } = useParams<string>()
+  const { country } = useParams()
+  let filteredCountryData
 
   useEffect(() => {
     fetch('/data/cat-data.json').then((response) =>
@@ -16,9 +19,11 @@ function Database() {
     )
   }, [])
 
-  const filteredCountryData = countryData.filter(
-    (c) => c.country.toLowerCase() === country.toLowerCase()
-  )
+  if (country) {
+    filteredCountryData = countryData.filter(
+      (c) => c.country.toLowerCase() === country.toLowerCase()
+    )
+  }
 
   return (
     <>
@@ -30,10 +35,15 @@ function Database() {
               <div className="section--database__filter">
                 <span>Filter by country</span>
                 <ul className="section--database__filter-list">
+                  <li>
+                    <Link to={`/database`}>
+                      <button>All</button>
+                    </Link>
+                  </li>
                   {countryData.map((country: CountryData) => (
                     <>
                       <li key={country.countryId}>
-                        <Link to={`/database/${country.country}`}>
+                        <Link to={`/database/${country.country.toLowerCase()}`}>
                           <button>
                             <img
                               className="section--database__flag"
@@ -53,35 +63,13 @@ function Database() {
           <div className="container container--full-width">
             <div className="col-12">
               <div className="section--database__manuls">
-                {filteredCountryData.length > 0 ? (
+                {country && filteredCountryData.length > 0 ? (
                   <>
                     {filteredCountryData.map((country: CountryData) => (
                       <>
                         {country.cats.map((cat: CatData) => (
                           <>
-                            <div
-                              key={cat.id}
-                              className="section--database__manul"
-                            >
-                              <h3>{cat.name}</h3>
-                              <div className="section--database__img-wrap">
-                                <img
-                                  className="section--database__img"
-                                  src={cat.imageUrl}
-                                  alt={cat.name}
-                                />
-                                <div className="section--database__country">
-                                  <img
-                                    className="section--database__flag"
-                                    src={cat.countryUrl}
-                                    alt={cat.country}
-                                  />
-                                  <span className="section--database__flag-title">
-                                    {cat.country}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
+                            <ManulCard key={cat.id} cat={cat} />
                           </>
                         ))}
                       </>

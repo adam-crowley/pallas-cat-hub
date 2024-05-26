@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
@@ -7,8 +8,9 @@ import ManulCard from './Cat'
 
 function Database() {
   const [countryData, setCountryData] = useState([])
-  const { country } = useParams()
-  let filteredCountryData
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
+  const { country } = useParams<string>()
+  let filteredCountryData: CountryData[] = []
 
   useEffect(() => {
     fetch('/data/cat-data.json').then((response) =>
@@ -19,9 +21,17 @@ function Database() {
     )
   }, [])
 
+  useEffect(() => {
+    if (country) {
+      setSelectedCountry(country)
+    } else {
+      setSelectedCountry(null)
+    }
+  }, [country])
+
   if (country) {
     filteredCountryData = countryData.filter(
-      (c) => c.country.toLowerCase() === country.toLowerCase()
+      (c: CountryData) => c.country.toLowerCase() === country.toLowerCase()
     )
   }
 
@@ -37,24 +47,36 @@ function Database() {
                 <ul className="section--database__filter-list">
                   <li>
                     <Link to={`/database`}>
-                      <button>All</button>
+                      <button
+                        className={!selectedCountry ? 'selected' : ''}
+                        onClick={() => setSelectedCountry(null)}
+                      >
+                        All
+                      </button>
                     </Link>
                   </li>
                   {countryData.map((country: CountryData) => (
-                    <>
-                      <li key={country.countryId}>
-                        <Link to={`/database/${country.country.toLowerCase()}`}>
-                          <button>
-                            <img
-                              className="section--database__flag"
-                              src={country.countryUrl}
-                              alt={country.country}
-                            />
-                            {country.country}
-                          </button>
-                        </Link>
-                      </li>
-                    </>
+                    <li key={country.countryId}>
+                      <Link to={`/database/${country.country.toLowerCase()}`}>
+                        <button
+                          className={
+                            selectedCountry === country.country.toLowerCase()
+                              ? 'selected'
+                              : ''
+                          }
+                          onClick={() =>
+                            setSelectedCountry(country.country.toLowerCase())
+                          }
+                        >
+                          <img
+                            className="section--database__flag"
+                            src={country.countryUrl}
+                            alt={country.country}
+                          />
+                          {country.country}
+                        </button>
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -66,19 +88,23 @@ function Database() {
                 {country && filteredCountryData.length > 0 ? (
                   <>
                     {filteredCountryData.map((country: CountryData) => (
-                      <>
+                      <React.Fragment key={country.countryId}>
                         {country.cats.map((cat: CatData) => (
-                          <>
-                            <ManulCard key={cat.id} cat={cat} />
-                          </>
+                          <ManulCard key={cat.id} cat={cat} />
                         ))}
-                      </>
+                      </React.Fragment>
                     ))}
                   </>
                 ) : (
-                  <p className="section--database__message">
-                    No cats found for this country
-                  </p>
+                  <>
+                    {countryData.map((country: CountryData) => (
+                      <React.Fragment key={country.countryId}>
+                        {country.cats.map((cat: CatData) => (
+                          <ManulCard key={cat.id} cat={cat} />
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </>
                 )}
               </div>
             </div>

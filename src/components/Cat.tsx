@@ -1,6 +1,10 @@
 import { CatData } from '../../models/models'
 
-function ManulCard({ cat }) {
+interface ManulCardProps {
+  cat: CatData
+}
+
+function ManulCard({ cat }: ManulCardProps) {
   return (
     <div className="section--database__manul" key={cat.id}>
       <h3>{cat.name}</h3>

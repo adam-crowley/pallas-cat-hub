@@ -59,9 +59,9 @@ function Header({ scrollToSection, refs }: HeaderProps) {
               Videos
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link to="/database">Database</Link>
-          </li> */}
+          </li>
         </ul>
         <button className="header__nav-btn" onClick={handleClick}>
           {isNavExpanded ? (

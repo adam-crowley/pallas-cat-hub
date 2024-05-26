@@ -601,13 +601,12 @@ p.large {
 .section--database__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 4rem;
   color: var(--white);
 }
-
 .section--database__header h2 {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
 
 .section--database__filter {
@@ -640,6 +639,11 @@ p.large {
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: color 0.2s, background-color 0.2s;
+}
+.section--database__filter-list button.selected {
+  color: var(--black);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .section--database__manuls {

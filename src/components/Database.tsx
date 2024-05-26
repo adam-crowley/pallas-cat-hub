@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { CountryData, CatData } from '../../models/models'
 
 import ManulCard from './Cat'
+import Filter from './Filter'
 
 function Database() {
   const [countryData, setCountryData] = useState([])
@@ -42,44 +43,10 @@ function Database() {
           <div className="container">
             <div className="section--database__header col-12">
               <h2>Pallas Cat Database</h2>
-              <div className="section--database__filter">
-                <span>Filter by country</span>
-                <ul className="section--database__filter-list">
-                  <li>
-                    <Link to={`/database`}>
-                      <button
-                        className={!selectedCountry ? 'selected' : ''}
-                        onClick={() => setSelectedCountry(null)}
-                      >
-                        All
-                      </button>
-                    </Link>
-                  </li>
-                  {countryData.map((country: CountryData) => (
-                    <li key={country.countryId}>
-                      <Link to={`/database/${country.country.toLowerCase()}`}>
-                        <button
-                          className={
-                            selectedCountry === country.country.toLowerCase()
-                              ? 'selected'
-                              : ''
-                          }
-                          onClick={() =>
-                            setSelectedCountry(country.country.toLowerCase())
-                          }
-                        >
-                          <img
-                            className="section--database__flag"
-                            src={country.countryUrl}
-                            alt={country.country}
-                          />
-                          {country.country}
-                        </button>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Filter
+                countryData={countryData}
+                selectedCountry={selectedCountry}
+              />
             </div>
           </div>
           <div className="container container--full-width">

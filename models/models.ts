@@ -37,3 +37,13 @@ export interface CatData {
   countryUrl: string
   imageUrl: string
 }
+
+export interface FilterProps {
+  countryData: CountryData[]
+  selectedCountry: string | null
+  setSelectedCountry: (country: string | null) => void
+}
+
+export interface ManulCardProps {
+  cat: CatData
+}

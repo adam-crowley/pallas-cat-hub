@@ -6,7 +6,8 @@ import { VideoSlideData } from '../../models/models'
 function VideoSlider() {
   const [data, setData] = useState<VideoSlideData[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [showVideo, setShowVideo] = useState(false)
+  const [showVideo, setShowVideo] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
     fetch('/data/video-slider-data.json')
@@ -18,6 +19,7 @@ function VideoSlider() {
   useEffect(() => {
     let player: YT.Player | null = null
     if (showVideo) {
+      setIsLoading(true)
       player = new YT.Player('slider__video', {
         height: '360',
         width: '640',
@@ -25,6 +27,9 @@ function VideoSlider() {
         playerVars: {
           autoplay: 1,
           controls: 0,
+        },
+        events: {
+          onReady: () => setIsLoading(false),
         },
       })
     }
@@ -59,16 +64,18 @@ function VideoSlider() {
         {data.length > 0 && (
           <>
             <div className="slider__media">
-              <ThreeCircles
-                visible={true}
-                height="75"
-                width="75"
-                innerCircleColor="#F9D36A"
-                middleCircleColor="#000"
-                outerCircleColor="#000"
-                ariaLabel="video-loading"
-                wrapperClass="slider__video-loading"
-              />
+              {isLoading ? (
+                <ThreeCircles
+                  visible={true}
+                  height="75"
+                  width="75"
+                  innerCircleColor="#F9D36A"
+                  middleCircleColor="#000"
+                  outerCircleColor="#000"
+                  ariaLabel="video-loading"
+                  wrapperClass="slider__video-loading"
+                />
+              ) : null}
               <div>
                 {showVideo ? (
                   <>

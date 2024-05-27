@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { ThreeCircles } from 'react-loader-spinner'
 
 import { CountryData, CatData } from '../../models/models'
 
@@ -10,6 +11,7 @@ import Filter from './Filter'
 function Database() {
   const [countryData, setCountryData] = useState([])
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const { country } = useParams<string>()
   let filteredCountryData: CountryData[] = []
 
@@ -17,7 +19,10 @@ function Database() {
     fetch('/data/cat-data.json').then((response) =>
       response
         .json()
-        .then((countryData) => setCountryData(countryData))
+        .then((countryData) => {
+          setCountryData(countryData)
+          setIsLoading(false)
+        })
         .catch((error) => console.error('Error fetching data:', error))
     )
   }, [])
@@ -40,12 +45,25 @@ function Database() {
     <>
       <section>
         <div className="section--database">
+          {isLoading ? (
+            <ThreeCircles
+              visible={true}
+              height="75"
+              width="75"
+              innerCircleColor="#F9D36A"
+              middleCircleColor="#000"
+              outerCircleColor="#000"
+              ariaLabel="video-loading"
+              wrapperClass="section--database__loading"
+            />
+          ) : null}
           <div className="container">
             <div className="section--database__header col-12">
               <h2>Pallas Cat Database</h2>
               <Filter
                 countryData={countryData}
                 selectedCountry={selectedCountry}
+                setSelectedCountry={setSelectedCountry}
               />
             </div>
           </div>

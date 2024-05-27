@@ -1,8 +1,4 @@
-import { CatData } from '../../models/models'
-
-interface ManulCardProps {
-  cat: CatData
-}
+import { ManulCardProps } from '../../models/models'
 
 function ManulCard({ cat }: ManulCardProps) {
   return (

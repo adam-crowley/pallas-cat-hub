@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
-import { CountryData } from '../../models/models'
 
-function Filter({ countryData, selectedCountry }) {
+import { CountryData, FilterProps } from '../../models/models'
+
+function Filter({
+  countryData,
+  selectedCountry,
+  setSelectedCountry,
+}: FilterProps) {
   return (
     <div className="section--database__filter">
       <span>Filter by country</span>

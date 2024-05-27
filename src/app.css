@@ -598,6 +598,13 @@ p.large {
   }
 }
 
+.section--database__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .section--database__header {
   display: flex;
   align-items: center;

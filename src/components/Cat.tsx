@@ -1,8 +1,15 @@
+import { motion } from 'framer-motion'
+
 import { ManulCardProps } from '../../models/models'
 
 function ManulCard({ cat }: ManulCardProps) {
   return (
-    <div className="section--database__manul" key={cat.id}>
+    <motion.div
+      className="section--database__manul"
+      key={cat.id}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeInOut', duration: 0.4 }}
+    >
       <h3>{cat.name}</h3>
       <div className="section--database__img-wrap">
         <img
@@ -19,7 +26,7 @@ function ManulCard({ cat }: ManulCardProps) {
           <span className="section--database__flag-title">{cat.country}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -60,7 +60,7 @@ function Header({ scrollToSection, refs }: HeaderProps) {
             </Link>
           </li>
           <li>
-            <Link to="/database">Database</Link>
+            <Link to="/database/japan">Database</Link>
           </li>
         </ul>
         <button className="header__nav-btn" onClick={handleClick}>

@@ -12,16 +12,44 @@
         "countryUrl": "/img/jp.svg"
       },
       {
-        "name": "Az",
+        "name": "Bol",
         "id": 2,
+        "imageUrl": "/img/uncompressed/database/bol.png",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Az",
+        "id": 3,
         "imageUrl": "/img/uncompressed/database/az.webp",
         "country": "Japan",
         "countryUrl": "/img/jp.svg"
       },
       {
-        "name": "Bol",
-        "id": 3,
-        "imageUrl": "/img/uncompressed/database/bol.png",
+        "name": "Lev",
+        "id": 4,
+        "imageUrl": "/img/uncompressed/database/Lev.webp",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Nar",
+        "id": 5,
+        "imageUrl": "/img/uncompressed/database/Nar.png",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Iris",
+        "id": 6,
+        "imageUrl": "/img/uncompressed/database/Iris.webp",
+        "country": "Japan",
+        "countryUrl": "/img/jp.svg"
+      },
+      {
+        "name": "Grusha",
+        "id": 7,
+        "imageUrl": "/img/uncompressed/database/Groosh.webp",
         "country": "Japan",
         "countryUrl": "/img/jp.svg"
       }
@@ -34,8 +62,22 @@
     "cats": [
       {
         "name": "Dunzi",
-        "id": 4,
+        "id": 8,
         "imageUrl": "/img/uncompressed/database/dunzi.webp",
+        "country": "China",
+        "countryUrl": "/img/cn.svg"
+      },
+      {
+        "name": "Shangxiang",
+        "id": 9,
+        "imageUrl": "/img/uncompressed/database/Shangxiang.webp",
+        "country": "China",
+        "countryUrl": "/img/cn.svg"
+      },
+      {
+        "name": "Xiaomei",
+        "id": 10,
+        "imageUrl": "/img/uncompressed/database/Xiaomei.webp",
         "country": "China",
         "countryUrl": "/img/cn.svg"
       }
@@ -48,8 +90,22 @@
     "cats": [
       {
         "name": "Norbu Jr",
-        "id": 5,
+        "id": 11,
         "imageUrl": "/img/uncompressed/database/norbu-jr.webp",
+        "country": "Germany",
+        "countryUrl": "/img/de.svg"
+      },
+      {
+        "name": "Chengdu",
+        "id": 12,
+        "imageUrl": "/img/uncompressed/database/Chengdu.png",
+        "country": "Germany",
+        "countryUrl": "/img/de.svg"
+      },
+      {
+        "name": "Fellini",
+        "id": 13,
+        "imageUrl": "/img/uncompressed/database/Fellini.webp",
         "country": "Germany",
         "countryUrl": "/img/de.svg"
       }

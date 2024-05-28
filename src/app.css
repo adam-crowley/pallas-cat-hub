@@ -679,13 +679,14 @@ p.large {
     column-gap: 2rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .section--database__manuls {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 .section--database__manul {
+  opacity: 0;
   color: var(--white);
 }
 

@@ -22,6 +22,12 @@ const optimizeImages = async () => {
           .png()
           .toFile(path.join(compressedImgPath, `${file}`))
       }
+      if (file.match(/\.(webp)$/i)) {
+        const imagePath = path.join(imgPath, file)
+        await sharp(imagePath)
+          .webp({ lossless: true })
+          .toFile(path.join(compressedImgPath, `${file}`))
+      }
     }
     console.log('Images optimized successfully')
   } catch (error) {
